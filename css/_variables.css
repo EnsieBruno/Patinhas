@@ -1,0 +1,47 @@
+:root {
+ 
+  /* Cores Primárias */
+  --primary: #D95B23;
+  --primary-light: #FF7F50;
+  --secondary: #FFD8B1;
+
+  /* Cores Neutras */
+  --light: #FFFFFF;
+  --light-bg: #fffdfc;
+  --gray-medium: #888;
+  --gray-dark: #555;
+  --dark: #333;
+  --dark-footer: #2a2a2a;
+
+  /*cores de efeito */
+  --success: #28a745;
+  --error: #dc3545;
+  --warning: #ffc107;
+
+  
+  /* Fontes usadas no site */
+  --font-family: "Poppins", sans-serif;
+  
+  --font-xs: 0.8rem;
+  --font-sm: 0.9rem;
+  --font-base: 1rem;
+  --font-md: 1.25rem;
+  --font-lg: 1.75rem;
+  --font-xl: 2.5rem;
+
+
+ /* espaçamentos */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+
+  /* Váriaveis de transições e sombras */
+ 
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  --radius: 8px; /* */
+  --line-height: 1.6; /* */
+  --transition: all 0.3s ease;
+}

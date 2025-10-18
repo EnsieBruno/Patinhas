@@ -1,0 +1,301 @@
+.button,
+form button {
+  display: inline-block;
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--primary);
+  color: var(--light);
+  border: none;
+  border-radius: var(--radius);
+  font-size: var(--font-base);
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+  text-decoration: none;
+}
+
+/* HOVER */
+.button:hover,
+form button:hover {
+  background-color: var(--primary-light);
+  color: var(--light);
+  text-decoration: none;
+}
+
+/* FOCUS*/
+.button:focus,
+form button:focus {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+/* Estado ACTIVE */
+.button:active,
+form button:active {
+  transform: scale(0.98);
+}
+
+/* Estado DISABLED */
+.button:disabled,
+form button:disabled {
+  background-color: var(--gray-medium);
+  cursor: not-allowed;
+}
+
+/* ====== FORMULÁRIOS ====== */
+
+.form-section {
+  background-color: #f9f9f9;
+  padding: var(--space-4);
+  border-radius: var(--radius);
+  margin-top: var(--space-4);
+}
+
+.form-section h2 {
+  text-align: center;
+  color: var(--primary);
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-3); 
+}
+
+form fieldset {
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  padding: var(--space-3); 
+  margin-bottom: var(--space-3); 
+}
+
+form legend {
+  padding: 0 var(--space-1); 
+  font-weight: bold;
+  color: var(--dark);
+  font-size: var(--font-md);
+}
+
+form label {
+  display: block;
+  margin-bottom: var(--space-1); 
+  font-weight: 600;
+  font-size: var(--font-sm);
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="file"],
+form select,
+form textarea {
+  width: 100%;
+  padding: var(--space-2);
+  border: 1px solid #ccc;
+  border-radius: var(--radius);
+  margin-bottom: var(--space-2);
+  font-family: var(--font-family);
+  font-size: var(--font-sm);
+  transition: var(--transition);
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 5px var(--secondary);
+}
+
+/* Validando Visualmente */
+form input:required:valid,
+form select:required:valid {
+    border-color: var(--success);
+}
+
+form input:required:invalid,
+form select:required:invalid {
+    border-color: var(--error);
+}
+
+
+.checkbox-group,
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2); 
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.checkbox-group label,
+.radio-group label {
+  font-weight: normal; 
+  margin-bottom: 0;
+  font-size: var(--font-sm);
+}
+
+.checkbox-group input,
+.radio-group input {
+  margin-right: var(--space-1); 
+  width: auto; 
+}
+
+/*  CARDS  */
+
+
+/* Cards da Galeria */
+.gallery {
+  text-align: center;
+}
+.gallery h2 {
+  color: var(--primary);
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-3); 
+}
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-3); 
+}
+.gallery-container figure {
+  background-color: var(--light);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: var(--transition);
+}
+.gallery-container figure:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+.gallery-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.gallery-container figcaption {
+  padding: var(--space-2);
+  font-weight: bold;
+  color: var(--gray-dark);
+}
+
+/* Cards de Projeto */
+.project-card {
+  background-color: var(--light-bg);
+  border: 1px solid #eee;
+  padding: var(--space-3); 
+  border-radius: var(--radius);
+  margin-bottom: var(--space-2); 
+}
+
+/* Card do Blog  */
+.blog-post-summary {
+  background-color: var(--light);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-4); 
+}
+.blog-post-summary img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin: var(--space-2) 0;
+}
+.blog-post-summary h3 {
+  color: var(--primary);
+  font-size: var(--font-md);
+}
+.post-meta {
+  font-size: var(--font-sm);
+  color: var(--gray-medium);
+  margin-bottom: var(--space-2); 
+}
+
+/* MÍDIAS */
+.media-section {
+  text-align: center;
+  margin-top: var(--space-4); 
+  background-color: var(--light);
+  padding: var(--space-4); 
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.media-section h2 {
+  color: var(--primary);
+  font-size: var(--font-lg);
+  margin-bottom: var(--space-3); 
+}
+.media-section iframe {
+  max-width: 100%;
+  border-radius: var(--radius);
+}
+.audio-testimonial {
+  margin-top: var(--space-3); 
+  padding-top: var(--space-3); 
+  border-top: 1px solid #eee;
+}
+.audio-testimonial:first-of-type {
+  border-top: none;
+}
+.audio-testimonial h3 {
+  margin-bottom: var(--space-1); 
+  font-size: var(--font-md);
+}
+
+/*GRÁFICOS */
+
+.charts-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+.chart-container {
+  background: var(--light);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.chart-container h3 {
+  margin-bottom: var(--space-2);
+  font-size: var(--font-md);
+}
+
+/* NOVOS COMPONENTES */
+
+/* Alertas de Feedbacks */
+.alert {
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-2);
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+}
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+.alert-error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+/* Badges e Tags */
+.badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  border-radius: var(--radius);
+}
+.badge-primary {
+  background-color: var(--primary);
+  color: var(--light);
+}
+.badge-secondary {
+  background-color: var(--secondary);
+  color: var(--dark);
+}

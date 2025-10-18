@@ -1,0 +1,146 @@
+/* MENU HAMBÚRGUER */
+
+/* Estilo do botão hambúrguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001; 
+}
+
+.hamburger-line {
+  width: 30px;
+  height: 3px;
+  background-color: var(--dark);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Animação do "X" quando o menu ativo */
+.menu-open .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.menu-open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.menu-open .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+
+/*  BREAKPOINTS */
+
+/* Breakpoint 1: Telas Grandes */
+@media (min-width: 1201px) {
+  .hero h2 {
+    font-size: var(--font-xl);
+  }
+}
+
+/* Breakpoint 2: Laptops e Desktops Pequenos (<= 1200px) */
+@media (max-width: 1200px) {
+}
+
+/* Breakpoint 3: Tablets (<= 992px) */
+@media (max-width: 992px) {
+  .gallery-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Breakpoint 4: Limite do Menu Mobile (<= 768px) */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start; 
+    position: relative; 
+  }
+
+  /* Organiza o topo (Logo, H1, Botão) */
+  .menu > a, .menu > h1 {
+    display: inline-block; 
+  }
+  .menu > h1 {
+    margin-left: var(--space-2);
+  }
+
+  /* Mostra o botão hambúrguer */
+  .menu-toggle {
+    display: flex;
+    position: absolute; 
+    top: 50%;
+    right: var(--space-2);
+    transform: translateY(-50%);
+  }
+
+  /* Esconde o menu de links... */
+  .menu ol {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--light-bg);
+    box-shadow: var(--shadow);
+    padding: var(--space-2) 0;
+  }
+  
+  /*  */
+  body.menu-open .menu ol {
+    display: flex;
+  }
+
+  .menu ol li {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .menu ol a {
+    display: block;
+    padding: var(--space-2);
+    width: 100%;
+    border-bottom: 1px solid var(--secondary);
+  }
+  .menu ol li:last-child a {
+    border-bottom: none;
+  }
+  .menu ol a:hover {
+    background-color: var(--secondary);
+  }
+
+  /* Ajustes gerais de layout mobile */
+  main {
+    padding: var(--space-2) var(--space-1);
+  }
+  
+  .content-page, .form-section, .media-section {
+    padding: var(--space-2);
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .charts-section {
+    grid-template-columns: 1fr; 
+  }
+}
+
+/* Breakpoint 5: Celulares (<= 576px) */
+@media (max-width: 576px) {
+  .hero h2 {
+    font-size: var(--font-lg);
+  }
+  
+  .hero p {
+    font-size: var(--font-base);
+  }
+}
