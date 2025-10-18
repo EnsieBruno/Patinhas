@@ -1,5 +1,7 @@
-@import url('./_variables.css');
-@import url('./_reset.css');
-@import url('./_layout.css');
-@import url('./_components.css');
-@import url('./_responsive.css');
+@layer base, layout, components, responsive;
+
+@import url('_variables.css') layer(base);
+@import url('_reset.css') layer(base);
+@import url('_layout.css') layer(layout);
+@import url('_components.css') layer(components);
+@import url('_responsive.css') layer(responsive);
