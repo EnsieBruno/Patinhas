@@ -54,7 +54,7 @@ body.dark-mode {
 
   /* Cores Neutras Invertidas */
   --light: #2a2a2a;         /* Fundo dos cards */
-  --light-bg: #1f1f1f;      /* Fundo da página */
+  --light-bg: #3e3c3b;      /* Fundo da página */
   --gray-medium: #aaa;      /* Meta-textos claros */
   --gray-dark: #ccc;        /* Parágrafos claros */
   --dark: #FFFFFF;          /* Títulos brancos */
