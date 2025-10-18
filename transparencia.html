@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patinhas.org - Transparência</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <a href="index.html">
+                <img class="logo" src="https://placehold.co/80x80/FF7F50/FFFFFF?text=Logo" alt="Logo da Patinhas.org" />
+            </a>
+            <h1>Patinhas.org</h1>
+            <ol>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <main class="content-page">
+        <section>
+            <h2>Transparência e Prestação de Contas</h2>
+            <p>Acreditamos que a transparência é a base da confiança. Aqui você pode acompanhar como os recursos são utilizados e o impacto que geramos juntos.</p>
+        </section>
+
+        <section class="charts-section">
+            <article class="chart-container">
+                <h3>Distribuição de Recursos por Projeto</h3>
+                <canvas id="recursosPizzaChart" width="400" height="400"></canvas>
+            </article>
+
+            <article class="chart-container">
+                <h3>Evolução de Voluntários (Último Ano)</h3>
+                <canvas id="voluntariosLineChart" width="400" height="400"></canvas>
+            </article>
+
+            <article class="chart-container">
+                <h3>Impacto Social por Região (Adoções)</h3>
+                <canvas id="impactoBarChart" width="400" height="400"></canvas>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Patinhas.org</h3>
+                <p>Amor e um lar para cada patinha.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="projetos.html">Nossos Projetos</a></li>
+                    <li><a href="cadastro.html">Seja um Voluntário</a></li>
+                    <li><a href="doacoes.html">Faça uma Doação</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <p>Email: contato@patinhas.org</p>
+                <p>Telefone: (41) 99999-9999</p>
+            </div>
+        </div>
+        <p class="copy">© 2025 Patinhas.org. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

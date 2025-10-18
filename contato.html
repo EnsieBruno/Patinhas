@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patinhas.org - Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="menu">
+            <a href="index.html">
+                <img class="logo" src="https://placehold.co/80x80/FF7F50/FFFFFF?text=Logo" alt="Logo da Patinhas.org" />
+            </a>
+            <h1>Patinhas.org</h1>
+            <ol>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <main class="content-page">
+        <section class="form-section">
+            <h2>Entre em Contato Conosco</h2>
+            <p>Tem alguma dúvida, sugestão ou quer saber mais sobre nosso trabalho? Preencha o formulário abaixo.</p>
+            
+            <form id="form-contato" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Suas Informações</legend>
+                    <label for="nome-contato">Nome:</label>
+                    <input type="text" id="nome-contato" name="nome-contato" required>
+
+                    <label for="email-contato">E-mail:</label>
+                    <input type="email" id="email-contato" name="email-contato" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sua Mensagem</legend>
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="">Selecione o assunto</option>
+                        <option value="duvida">Dúvida</option>
+                        <option value="sugestao">Sugestão</option>
+                        <option value="parceria">Parceria</option>
+                        <option value="outro">Outro</option>
+                    </select>
+
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="8" required minlength="15"></textarea>
+
+                    <label for="anexo">Anexar um arquivo (opcional):</label>
+                    <input type="file" id="anexo" name="anexo">
+                </fieldset>
+
+                <button type="submit">Enviar Contato</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>Patinhas.org</h3>
+                <p>Amor e um lar para cada patinha.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="sobre.html">Sobre Nós</a></li>
+                    <li><a href="projetos.html">Nossos Projetos</a></li>
+                    <li><a href="cadastro.html">Seja um Voluntário</a></li>
+                    <li><a href="doacoes.html">Faça uma Doação</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <p>Email: contato@patinhas.org</p>
+                <p>Telefone: (41) 99999-9999</p>
+            </div>
+        </div>
+        <p class="copy">© 2024 Patinhas.org. Todos os direitos reservados.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
