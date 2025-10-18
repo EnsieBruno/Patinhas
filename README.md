@@ -33,6 +33,7 @@ O site da Patinhas.org é uma plataforma de demonstração para uma ONG de resga
 
 O projeto segue uma estrutura de pastas organizada, como exigido pelos requisitos:
 
+<pre><code>
 projeto/
 │
 ├── index.html # Página principal / "Shell" do SPA
@@ -48,7 +49,7 @@ projeto/
 │ ├── style.css # Arquivo principal de importação
 │ ├── style.min.css # Arquivo minificado para produção
 │ ├── _variables.css # Design System (cores, fontes, modo escuro)
-│ ├── _reset.css # Reset global e estilos do <body>
+│ ├── _reset.css # Reset global e estilos do &lt;body&gt;
 │ ├── _layout.css # Header, Footer, Main, Grid
 │ ├── _components.css # Botões, Cards, Formulários, Toggle
 │ └── _responsive.css # Media queries, Menu Hambúrguer
@@ -62,6 +63,7 @@ projeto/
 │ └── (áudios .mp4)
 │
 └── README.md
+</code></pre>
 
 ## 🚀 Como Executar
 
