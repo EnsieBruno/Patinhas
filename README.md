@@ -47,7 +47,6 @@ projeto/
 │
 ├── css/
 │ ├── style.css # Arquivo principal de importação
-│ ├── style.min.css # Arquivo minificado para produção
 │ ├── _variables.css # Design System (cores, fontes, modo escuro)
 │ ├── _reset.css # Reset global e estilos do &lt;body&gt;
 │ ├── _layout.css # Header, Footer, Main, Grid
@@ -56,7 +55,6 @@ projeto/
 │
 ├── js/
 │ ├── scripts.js # Script principal modularizado (SPA, Validação, Gráficos, UI)
-│ └── scripts.min.js # Script minificado para produção
 │
 ├── assets/
 │ ├── (imagens .jpg, .webp, .png)
