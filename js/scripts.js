@@ -1,6 +1,11 @@
-// --- 1. MÓDULO: NAVEGAÇÃO  --- //
+/* =================================== */
+/* PROJETO PATINHAS.ORG - FASE 3 e 4   */
+/* SCRIPT MODULARIZADO                 */
+/* =================================== */
 
- /* Inicializa os eventos do menu hambúrguer */
+// --- 1. MÓDULO: NAVEGAÇÃO  --- //
+
+/* Inicializa os eventos do menu hambúrguer */
 function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const body = document.body;
@@ -16,23 +21,25 @@ function initMobileMenu() {
 
     // Fecha o menu ao clicar em um link //
     document.querySelector('.menu ol')?.addEventListener('click', (e) => {
+        // Precisamos garantir que menuToggle existe antes de usá-lo
+        const menuToggle = document.querySelector('.menu-toggle');
         if (e.target.tagName === 'A') {
             body.classList.remove('menu-open');
-            menuToggle.setAttribute('aria-expanded', 'false');
+            if (menuToggle) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
         }
     });
 }
 
 // --- 2. MÓDULO: VALIDAÇÃO DE FORMULÁRIOS --- //
 
-
- /* Valida um número de CPF.
+/* Valida um número de CPF.
  * @param {string} cpf - O CPF a ser validado.
  * @returns {boolean} - True se o CPF for válido, false se inválido.
  */
-
 function validaCPF(cpf) {
-    cpf = cpf.replace(/[^\d]/g, ''); 
+    cpf = cpf.replace(/[^\d]/g, '');
     if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
 
     let soma = 0;
@@ -91,11 +98,11 @@ function initFormMasks() {
 /**
  * Inicializa a validação avançada da página de cadastro. */
 function initCadastroPage() {
-    initFormMasks(); 
+    initFormMasks();
 
     const form = document.getElementById('form-voluntario');
     const cpfInput = document.getElementById('cpf');
-    
+
     if (form && cpfInput) {
         const removeOldAlert = () => {
             const oldAlert = form.querySelector('.alert-error');
@@ -118,7 +125,8 @@ function initCadastroPage() {
                 e.preventDefault();
                 showAlert('CPF inválido. Por favor, verifique os dados.');
                 cpfInput.focus();
-                cpfInput.classList.add('input-error'); 
+                cpfInput.classList.add('input-error');
+            } // <-- ESTE COLCHETE '}' ESTAVA FALTANDO
         });
 
         // Valida em tempo real (quando sai do campo) //
@@ -141,9 +149,9 @@ function initTransparenciaPage() {
     // Gráfico de Pizza //
     const recursosCtx = document.getElementById('recursosPizzaChart');
     if (recursosCtx) {
-    
+
         if (window.chartRecursos) window.chartRecursos.destroy();
-        
+
         window.chartRecursos = new Chart(recursosCtx, {
             type: 'pie',
             data: {
@@ -218,7 +226,7 @@ function runPageScripts() {
     } else if (path.endsWith('cadastro.html')) {
         initCadastroPage();
     } else if (path.endsWith('transparencia.html')) {
-        initTransparenciaPage(); 
+        initTransparenciaPage();
     }
 }
 
@@ -232,30 +240,30 @@ async function loadPageContent(href) {
 
     try {
         let content;
-        
+
         if (pageCache[href]) {
             content = pageCache[href];
         } else {
             // 2. Se não está no cache, busca (fetch) //
             const response = await fetch(href);
             if (!response.ok) throw new Error('Página não encontrada');
-            
+
             const html = await response.text();
-            
+
             // 3. Parser do HTML para extrair <main> e <title> //
             const parser = new DOMParser();
             const doc = parser.parseFromString(html, 'text/html');
-            
+
             const newTitle = doc.querySelector('title')?.textContent || 'Patinhas.org';
             const newMain = doc.querySelector('main');
 
             if (!newMain) throw new Error('Conteúdo principal não encontrado');
-            
+
             content = {
                 title: newTitle,
                 main: newMain.innerHTML
             };
-            
+
             // 4. Salva no cache //
             pageCache[href] = content;
         }
@@ -284,13 +292,13 @@ function handleLinkClick(e) {
     if (e.target.tagName === 'A' && e.target.origin === window.location.origin && !e.target.hash && e.target.target !== '_blank') {
         e.preventDefault(); // Impede o recarregamento da página //
         const href = e.target.href;
-        
+
         // Não recarrega se for a mesma página //
         if (href === window.location.href) return;
 
         // Atualiza a URL na barra de endereços //
         window.history.pushState({ path: href }, '', href);
-        
+
         // Carrega o novo conteúdo
         loadPageContent(href);
     }
@@ -303,10 +311,37 @@ window.addEventListener('popstate', (e) => {
     if (e.state && e.state.path) {
         loadPageContent(e.state.path);
     } else {
-        
+
         loadPageContent(window.location.pathname);
     }
 });
+
+// --- NOVO MÓDULO: MODO ESCURO (FASE 4) ---
+
+function initDarkMode() {
+    const toggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+
+    // 1. Verifica preferência salva no localStorage
+    const savedPreference = localStorage.getItem('darkMode');
+    if (savedPreference === 'true') {
+        body.classList.add('dark-mode');
+        if (toggle) toggle.checked = true;
+    }
+
+    // 2. Adiciona o listener para o clique
+    if (toggle) {
+        toggle.addEventListener('change', () => {
+            if (toggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'false');
+            }
+        });
+    }
+}
 
 // --- 5. MÓDULO: INICIALIZAÇÃO --- //
 
@@ -327,6 +362,9 @@ function initApp() {
         main: document.querySelector('main').innerHTML
     };
     runPageScripts();
+
+    // 4. INICIALIZA O MODO ESCURO //
+    initDarkMode();
 }
 
 // Roda o app quando o DOM estiver pronto. //

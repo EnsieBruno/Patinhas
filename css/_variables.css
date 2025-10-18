@@ -8,7 +8,7 @@
   /* Cores Neutras */
   --light: #FFFFFF;
   --light-bg: #fffdfc;
-  --gray-medium: #888;
+  --gray-medium: #767676;;
   --gray-dark: #555;
   --dark: #333;
   --dark-footer: #2a2a2a;
@@ -44,4 +44,30 @@
   --radius: 8px; /* */
   --line-height: 1.6; /* */
   --transition: all 0.3s ease;
+}
+
+/* Define as variáveis de cor para o modo escuro */
+body.dark-mode {
+  --primary: #FF7F50;
+  --primary-light: #D95B23; 
+  --secondary: #5a4a3a;
+
+  /* Cores Neutras Invertidas */
+  --light: #2a2a2a;         /* Fundo dos cards */
+  --light-bg: #1f1f1f;      /* Fundo da página */
+  --gray-medium: #aaa;      /* Meta-textos claros */
+  --gray-dark: #ccc;        /* Parágrafos claros */
+  --dark: #FFFFFF;          /* Títulos brancos */
+  --dark-footer: #1f1f1f;    /* Fundo do rodapé (igual ao body) */
+  
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Garantindo que as imagens não fiquem brilhantes */
+body.dark-mode img {
+    opacity: 0.85;
+    transition: var(--transition);
+}
+body.dark-mode img:hover {
+    opacity: 1;
 }
